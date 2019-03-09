@@ -8,5 +8,3 @@ cache:
 script:
   - yarn test
   - yarn build
-on:
-  branch: master
