@@ -4,7 +4,7 @@
   "scripts": {
     "lint": "eslint ./src && eslint ./testSetup && eslint ./__tests__ && stylelint ./src/stylelint/**/*.scss",
     "start": "webpack-dev-server --open --hot",
-    "test": "jest",
+    "test": "jest && codecov",
     "watch": "webpack --watch",
     "build": "webpack --mode production && react-snapshot --build-dir=./dist"
   },
@@ -25,6 +25,7 @@
     "babel-jest": "^24.3.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.0",
+    "codecov": "^3.2.0",
     "copy-webpack-plugin": "^5.0.0",
     "css-loader": "^2.1.1",
     "enzyme-to-json": "^3.3.5",
@@ -51,6 +52,8 @@
     "webpack-dev-server": "^3.2.1"
   },
   "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
