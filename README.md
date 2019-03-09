@@ -1,4 +1,6 @@
 # learn-react
+[![codecov](https://codecov.io/gh/juz501/learn-react/branch/master/graph/badge.svg)](https://codecov.io/gh/juz501/learn-react)
+
 Learning React again, with hooks this time.
 
 ## Initial Setup
