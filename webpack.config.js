@@ -1,7 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -14,6 +16,7 @@ module.exports = {
   mode: 'production',
   output: {
     filename: '[name].[hash].bundle.js',
+    chunkFilename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
@@ -30,6 +33,12 @@ module.exports = {
           },
         },
       },
+    }),
+    new CopyPlugin([
+      { from: 'public/**/*', to: 'assets', flatten: true },
+    ]),
+    new StyleLintPlugin({
+      configFile: '.stylelintrc.js',
     }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
