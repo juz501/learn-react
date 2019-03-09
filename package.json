@@ -2,13 +2,15 @@
   "author": "Julian Chan <julianc@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint ./src && stylelint ./src/stylelint/**/*.scss",
+    "lint": "eslint ./src && eslint ./testSetup && eslint ./__tests__ && stylelint ./src/stylelint/**/*.scss",
     "start": "webpack-dev-server --open --hot",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch": "webpack --watch",
     "build": "webpack --mode production && react-snapshot --build-dir=./dist"
   },
   "dependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "npm:@hot-loader/react-dom",
@@ -20,10 +22,12 @@
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.3.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.0",
     "copy-webpack-plugin": "^5.0.0",
     "css-loader": "^2.1.1",
+    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.2",
@@ -31,6 +35,9 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.3.1",
+    "jest-cli": "^24.3.1",
+    "jest-enzyme": "^7.0.2",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "path": "^0.12.7",
@@ -42,5 +49,14 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFilesAfterEnv": [
+      "./src/setupTests.js",
+      "./node_modules/jest-enzyme/lib/index.js"
+    ]
   }
 }
