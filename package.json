@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --open --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "webpack": "webpack --mode production && react-snapshot --build-dir=./dist"
+    "build": "webpack --mode production && react-snapshot --build-dir=./dist"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
