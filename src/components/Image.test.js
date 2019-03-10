@@ -22,34 +22,59 @@ describe('Image', () => {
   });
 
   it('should throw missing prop error 1', () => {
-    expect(() => { shallow(<Image />) }).toThrow();
+    expect(() => { shallow(<Image />); }).toThrow();
   });
 
   it('should throw missing prop error 2', () => {
-    expect(() => { shallow(<Image filename={IMAGE_FILENAME} />) }).toThrow();
+    expect(() => { shallow(<Image filename={IMAGE_FILENAME} />); }).toThrow();
   });
 
   it('should throw missing prop error 3', () => {
-    expect(() => { shallow(<Image filename={IMAGE_FILENAME} width={IMAGE_WIDTH} />) }).toThrow();
+    expect(() => {
+      shallow(<Image
+        filename={IMAGE_FILENAME}
+        width={IMAGE_WIDTH}
+      />);
+    }).toThrow();
   });
 
   it('should not throw missing prop', () => {
-    expect(() => { shallow(<Image filename={IMAGE_FILENAME} width={IMAGE_WIDTH} height={IMAGE_HEIGHT} /> ) }).not.toThrow();
+    expect(() => {
+      shallow(<Image
+        filename={IMAGE_FILENAME}
+        width={IMAGE_WIDTH}
+        height={IMAGE_HEIGHT}
+      />);
+    }).not.toThrow();
   });
 
   it('should have one with img tag', () => {
-    const wrapper = shallow(<Image filename={IMAGE_FILENAME} alt={IMAGE_ALT} width={IMAGE_WIDTH} height={IMAGE_HEIGHT} />);
+    const wrapper = shallow(<Image
+      filename={IMAGE_FILENAME}
+      alt={IMAGE_ALT}
+      width={IMAGE_WIDTH}
+      height={IMAGE_HEIGHT}
+    />);
     expect(wrapper.find('img')).toHaveLength(1);
   });
 
   it('should have a src attribute', () => {
-    const wrapper = shallow(<Image filename={IMAGE_FILENAME} alt={IMAGE_ALT}  width={IMAGE_WIDTH} height={IMAGE_HEIGHT} />);
-    expect(wrapper.find('img[src="' + IMAGE_PATH + '"]')).toHaveLength(1);;
+    const wrapper = shallow(<Image
+      filename={IMAGE_FILENAME}
+      alt={IMAGE_ALT}
+      width={IMAGE_WIDTH}
+      height={IMAGE_HEIGHT}
+    />);
+    expect(wrapper.find(`img[src="${IMAGE_PATH}"]`)).toHaveLength(1);
   });
 
   it('should match snapshot', () => {
-    const wrapper = shallow(<Image filename={IMAGE_FILENAME} alt={IMAGE_ALT} width={IMAGE_WIDTH} height={IMAGE_HEIGHT} />);
+    const wrapper = shallow(<Image
+      filename={IMAGE_FILENAME}
+      alt={IMAGE_ALT}
+      width={IMAGE_WIDTH}
+      height={IMAGE_HEIGHT}
+    />);
     expect(wrapper).toMatchSnapshot();
   });
-
 });
