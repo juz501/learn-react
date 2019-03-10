@@ -7,6 +7,11 @@ Learning React again, with hooks this time.
 - yarn install
 - yarn start
 
+## Testing
+Run tests and generate coverage via
+- yarn test
+
+
 ## Task management
 Using GitHub Projects
 - you may want to claim tasks and do them if you want to.

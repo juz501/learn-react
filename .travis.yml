@@ -8,5 +8,4 @@ cache:
 script:
   - yarn test
   - yarn build
-on:
-  branch: master
+  - bash <(curl -s https://codecov.io/bash)
