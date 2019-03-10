@@ -5,7 +5,10 @@ import H1 from '../components/H1';
 import Image from '../components/Image';
 
 function App() {
-  const filename = 'Pikachu.jpg';
+  const imageName = 'Pikachu.jpg';
+  const imageAlt = 'Pikachu';
+  const imageWidth = '372px';
+  const imageHeight = '372px';
   return (
     <div className="main">
       <Helmet>
@@ -13,7 +16,7 @@ function App() {
         <meta name="description" content="Definitely good" />
       </Helmet>
       <H1 />
-      <Image filename={filename} width="372px" height="378px" />
+      <Image filename={imageName} alt={imageAlt} width={imageWidth} height={imageHeight} />
     </div>
   );
 }
