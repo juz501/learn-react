@@ -68,6 +68,46 @@ describe('Image', () => {
     expect(wrapper.find(`img[src="${IMAGE_PATH}"]`)).toHaveLength(1);
   });
 
+  it('should have default alt tag', () => {
+    const wrapper = shallow(<Image
+      filename={IMAGE_FILENAME}
+      width={IMAGE_WIDTH}
+      height={IMAGE_HEIGHT}
+    />);
+    const placeholder = 'placeholder';
+    expect(wrapper.find(`img[alt="${placeholder}"]`)).toHaveLength(1);
+  });
+
+  it('should have a alt attribute', () => {
+    const wrapper = shallow(<Image
+      filename={IMAGE_FILENAME}
+      alt={IMAGE_ALT}
+      width={IMAGE_WIDTH}
+      height={IMAGE_HEIGHT}
+    />);
+    expect(wrapper.find(`img[alt="${IMAGE_ALT}"]`)).toHaveLength(1);
+  });
+
+  it('should have a width attribute', () => {
+    const wrapper = shallow(<Image
+      filename={IMAGE_FILENAME}
+      alt={IMAGE_ALT}
+      width={IMAGE_WIDTH}
+      height={IMAGE_HEIGHT}
+    />);
+    expect(wrapper.find(`img[width="${IMAGE_WIDTH}"]`)).toHaveLength(1);
+  });
+
+  it('should have a height attribute', () => {
+    const wrapper = shallow(<Image
+      filename={IMAGE_FILENAME}
+      alt={IMAGE_ALT}
+      width={IMAGE_WIDTH}
+      height={IMAGE_HEIGHT}
+    />);
+    expect(wrapper.find(`img[height="${IMAGE_HEIGHT}"]`)).toHaveLength(1);
+  });
+
   it('should match snapshot', () => {
     const wrapper = shallow(<Image
       filename={IMAGE_FILENAME}
