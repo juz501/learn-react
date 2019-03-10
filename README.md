@@ -1,5 +1,5 @@
 # learn-react
-[![codecov](https://codecov.io/gh/juz501/learn-react/branch/master/graph/badge.svg)](https://codecov.io/gh/juz501/learn-react)
+[![codecov](https://codecov.io/gh/juz501/learn-react/branch/master/graph/badge.svg)](https://codecov.io/gh/juz501/learn-react) [![Coverage Status](https://coveralls.io/repos/github/juz501/learn-react/badge.svg?branch=dev)](https://coveralls.io/github/juz501/learn-react?branch=dev)
 
 Learning React again, with hooks this time.
 
