@@ -4,19 +4,16 @@
   "scripts": {
     "lint": "eslint ./src && eslint ./testSetup && eslint ./__tests__ && stylelint ./src/stylelint/**/*.scss",
     "start": "webpack-dev-server --open --hot",
-    "test": "jest && codecov",
+    "test": "jest",
+    "update-snapshot": "jest --update-snapshot",
     "watch": "webpack --watch",
     "build": "webpack --mode production && react-snapshot --build-dir=./dist"
   },
   "dependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.10.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "npm:@hot-loader/react-dom",
-    "react-helmet": "^5.2.0",
-    "react-hot-loader": "^4.8.0",
-    "react-snapshot": "^1.3.0"
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -28,6 +25,8 @@
     "codecov": "^3.2.0",
     "copy-webpack-plugin": "^5.0.0",
     "css-loader": "^2.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
     "enzyme-to-json": "^3.3.5",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -39,9 +38,12 @@
     "jest": "^24.3.1",
     "jest-cli": "^24.3.1",
     "jest-enzyme": "^7.0.2",
+    "jest-prop-type-error": "^1.1.0",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "path": "^0.12.7",
+    "react-hot-loader": "^4.8.0",
+    "react-snapshot": "^1.3.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",
@@ -59,7 +61,8 @@
     ],
     "setupFilesAfterEnv": [
       "./src/setupTests.js",
-      "./node_modules/jest-enzyme/lib/index.js"
+      "./node_modules/jest-enzyme/lib/index.js",
+      "jest-prop-type-error"
     ]
   }
 }
