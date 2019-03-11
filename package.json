@@ -7,7 +7,7 @@
     "lint": "eslint ./src && eslint ./testSetup && eslint ./__tests__ && stylelint ./src/stylelint/**/*.scss",
     "start": "webpack-dev-server --open --hot",
     "test": "jest",
-    "update-snapshot": "jest --update-snapshot",
+    "update-snapshot": "jest -u",
     "watch": "webpack --watch"
   },
   "dependencies": {

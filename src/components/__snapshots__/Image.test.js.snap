@@ -3,6 +3,7 @@
 exports[`Image should match snapshot 1`] = `
 <img
   alt="Pikachu"
+  className="pokemon pikachu"
   height="378px"
   src="assets/Pikachu.jpg"
   width="372px"
