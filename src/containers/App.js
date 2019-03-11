@@ -6,6 +6,7 @@ import Image from '../components/Image';
 
 function App() {
   const imageName = 'Pikachu.jpg';
+  const imageClass = 'pokemon pikachu';
   const imageAlt = 'Pikachu';
   const imageWidth = '372px';
   const imageHeight = '372px';
@@ -16,7 +17,13 @@ function App() {
         <meta name="description" content="Definitely good" />
       </Helmet>
       <H1 />
-      <Image filename={imageName} alt={imageAlt} width={imageWidth} height={imageHeight} />
+      <Image
+        filename={imageName}
+        className={imageClass}
+        alt={imageAlt}
+        width={imageWidth}
+        height={imageHeight}
+      />
     </div>
   );
 }

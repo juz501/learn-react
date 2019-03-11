@@ -7,6 +7,9 @@ import Image from './Image';
 // https://github.com/FormidableLabs/enzyme-matchers/tree/master/packages/jest-enzyme
 describe('Image', () => {
   let IMAGE_FILENAME;
+  let IMAGE_CLASSNAME1;
+  let IMAGE_CLASSNAME2;
+  let IMAGE_CLASSNAMES;
   let IMAGE_ALT;
   let IMAGE_WIDTH;
   let IMAGE_HEIGHT;
@@ -15,6 +18,9 @@ describe('Image', () => {
 
   beforeEach(() => {
     IMAGE_FILENAME = 'Pikachu.jpg';
+    IMAGE_CLASSNAME1 = 'pokemon';
+    IMAGE_CLASSNAME2 = 'pikachu';
+    IMAGE_CLASSNAMES = `${IMAGE_CLASSNAME1} ${IMAGE_CLASSNAME2}`;
     IMAGE_ALT = 'Pikachu';
     IMAGE_WIDTH = '372px';
     IMAGE_HEIGHT = '378px';
@@ -51,6 +57,7 @@ describe('Image', () => {
   it('should have one with img tag', () => {
     const wrapper = shallow(<Image
       filename={IMAGE_FILENAME}
+      className={IMAGE_CLASSNAMES}
       alt={IMAGE_ALT}
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
@@ -61,6 +68,7 @@ describe('Image', () => {
   it('should have a src attribute', () => {
     const wrapper = shallow(<Image
       filename={IMAGE_FILENAME}
+      className={IMAGE_CLASSNAMES}
       alt={IMAGE_ALT}
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
@@ -71,6 +79,7 @@ describe('Image', () => {
   it('should have default alt tag', () => {
     const wrapper = shallow(<Image
       filename={IMAGE_FILENAME}
+      className={IMAGE_CLASSNAMES}
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
     />);
@@ -81,6 +90,7 @@ describe('Image', () => {
   it('should have a alt attribute', () => {
     const wrapper = shallow(<Image
       filename={IMAGE_FILENAME}
+      className={IMAGE_CLASSNAMES}
       alt={IMAGE_ALT}
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
@@ -88,9 +98,43 @@ describe('Image', () => {
     expect(wrapper.find(`img[alt="${IMAGE_ALT}"]`)).toHaveLength(1);
   });
 
+  it('should have a class attribute', () => {
+    const wrapper = shallow(<Image
+      filename={IMAGE_FILENAME}
+      className={IMAGE_CLASSNAMES}
+      alt={IMAGE_ALT}
+      width={IMAGE_WIDTH}
+      height={IMAGE_HEIGHT}
+    />);
+    expect(wrapper.find(`img[class="${IMAGE_CLASSNAMES}"]`)).toHaveLength(1);
+  });
+
+  it('should have 1st class', () => {
+    const wrapper = shallow(<Image
+      filename={IMAGE_FILENAME}
+      className={IMAGE_CLASSNAMES}
+      alt={IMAGE_ALT}
+      width={IMAGE_WIDTH}
+      height={IMAGE_HEIGHT}
+    />);
+    expect(wrapper.find('img').prop('class')).toEqual(expect.stringContaining(IMAGE_CLASSNAME1));
+  });
+
+  it('should have 2nd class', () => {
+    const wrapper = shallow(<Image
+      filename={IMAGE_FILENAME}
+      className={IMAGE_CLASSNAMES}
+      alt={IMAGE_ALT}
+      width={IMAGE_WIDTH}
+      height={IMAGE_HEIGHT}
+    />);
+    expect(wrapper.find('img').prop('class')).toEqual(expect.stringContaining(IMAGE_CLASSNAME2));
+  });
+
   it('should have a width attribute', () => {
     const wrapper = shallow(<Image
       filename={IMAGE_FILENAME}
+      className={IMAGE_CLASSNAMES}
       alt={IMAGE_ALT}
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
@@ -101,6 +145,7 @@ describe('Image', () => {
   it('should have a height attribute', () => {
     const wrapper = shallow(<Image
       filename={IMAGE_FILENAME}
+      className={IMAGE_CLASSNAMES}
       alt={IMAGE_ALT}
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
@@ -111,6 +156,7 @@ describe('Image', () => {
   it('should match snapshot', () => {
     const wrapper = shallow(<Image
       filename={IMAGE_FILENAME}
+      className={IMAGE_CLASSNAMES}
       alt={IMAGE_ALT}
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
