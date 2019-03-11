@@ -12,7 +12,7 @@ function Image(props) {
   } = props;
   const filenamePath = `assets/${filename}`;
   return (
-    <img src={filenamePath} class={className} alt={alt} width={width} height={height} />
+    <img src={filenamePath} className={className} alt={alt} width={width} height={height} />
   );
 }
 
