@@ -1,5 +1,11 @@
 languages:
-- javascript
+- name: javascript
+  production:
+    exclude:
+    - .*\.test\.js
+  test:
+    include:
+    - .*\.test\.js 
 component_depth: 2
 exclude:
 - /webpack\.config\.js
