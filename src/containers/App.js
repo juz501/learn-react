@@ -15,18 +15,13 @@ function getHelmet() {
   );
 }
 function getPikachuImage() {
-  const imageName = 'Pikachu.jpg';
-  const imageClass = 'pokemon pikachu';
-  const imageAlt = 'Pikachu';
-  const imageWidth = '372px';
-  const imageHeight = '372px';
   return (
     <Image
-      filename={imageName}
-      className={imageClass}
-      alt={imageAlt}
-      width={imageWidth}
-      height={imageHeight}
+      filename="Pikachu.jpg"
+      className="pokemon pikachu"
+      alt="Pikachu on white background"
+      width="372px"
+      height="378px"
     />
   );
 }
