@@ -9,6 +9,7 @@ const imageClass = 'pokemon pikachu';
 const imageAlt = 'Pikachu';
 const imageWidth = '372px';
 const imageHeight = '372px';
+const title = 'Hey There';
 
 /**
  * The App
@@ -17,10 +18,10 @@ function App() {
   return (
     <div className="main">
       <Helmet>
-        <title>Hey There</title>
+        <title>{title}</title>
         <meta name="description" content="Definitely good" />
       </Helmet>
-      <H1 />
+      <H1 title={title} />
       <Image
         filename={imageName}
         className={imageClass}

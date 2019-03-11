@@ -11,13 +11,18 @@ describe('H1', () => {
     expect(component.find('h1')).toHaveLength(1);
   });
 
-  it('should have one with class `.title`', () => {
+  it('should have class `.title`', () => {
     const component = shallow(<H1 />);
-    expect(component.find('.title')).toHaveLength(1);
+    expect(component.find('h1').hasClass('title')).toEqual(true);
+  });
+
+  it('should have title as attribute passed through', () => {
+    const component = shallow(<H1>Hey There</H1>);
+    expect(component.find('h1').children().text()).toEqual('Hey There');
   });
 
   it('should match snapshot', () => {
-    const component = shallow(<H1 />);
+    const component = shallow(<H1>Hey There</H1>);
     expect(component).toMatchSnapshot();
   });
 });
