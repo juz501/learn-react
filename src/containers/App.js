@@ -4,8 +4,6 @@ import { Helmet } from 'react-helmet';
 import H1 from '../components/H1';
 import Image from '../components/Image';
 
-
-
 function getHelmet() {
   const title = 'Hey There';
   const description = 'Awesome meta description';
