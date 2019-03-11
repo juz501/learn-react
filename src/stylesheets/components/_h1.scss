@@ -1,5 +1,31 @@
-.title {
-  color: #333;
-  font-family: 'Lato', sans-serif;
+.heading-wrapper {
+  margin: 10px 0;
+}
+
+.heading {
+  color: $heading-color;
+  display: inline-block;
+  font-family: $default-font;
+  left: 0;
+  margin-bottom: 10px;
+  position: relative;
   text-align: left;
+  top: 0;
+
+  &::after {
+    background-color: $border-color;
+    content: '';
+    display: inline-block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: calc(#{$heading-size} + 10px);
+    transition: 0.1s ease all;
+    width: 0%;
+
+    .loaded & {
+      transition: 0.1s ease all 0.5s;
+      width: 100%;
+    }
+  }
 }

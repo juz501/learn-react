@@ -36,10 +36,12 @@ function App() {
     <div className="main">
       {getHelmet(title)}
       <H1>{title}</H1>
-      {getPikachuImage()}
-      <button type="button" onClick={e => setTitle(e.target.value)} value="Hello">Hello</button>
-      <button type="button" onClick={e => setTitle(e.target.value)} value="Bye">Bye</button>
-      <button type="button" onClick={() => setTitle(initialTitle)}>Reset</button>
+      <div className="content">
+        {getPikachuImage()}
+        <button type="button" onClick={e => setTitle(e.target.value)} value="Hello">Hello</button>
+        <button type="button" onClick={e => setTitle(e.target.value)} value="Bye">Bye</button>
+        <button type="button" onClick={() => setTitle(initialTitle)}>Reset</button>
+      </div>
     </div>
   );
 }

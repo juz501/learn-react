@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
 
 function H1(props) {
-  const { children: title } = props;
+  const { children: heading } = props;
 
   return (
-    <div>
-      <h1 className="heading">{title}</h1>
+    <div className="heading-wrapper">
+      <h1 className="heading">{heading}</h1>
     </div>
   );
 }

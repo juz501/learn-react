@@ -1,4 +1,8 @@
 .main {
-  margin: 0 auto;
-  max-width: 1200px;
+  margin: 10px auto;
+  max-width: $content-width;
+
+  .content {
+    margin: 10px 0;
+  }
 }
