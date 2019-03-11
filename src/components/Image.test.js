@@ -106,7 +106,7 @@ describe('Image', () => {
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
     />);
-    expect(wrapper.find(`img[class="${IMAGE_CLASSNAMES}"]`)).toHaveLength(1);
+    expect(wrapper.find('img').hasClass(IMAGE_CLASSNAMES)).toEqual(true);
   });
 
   it('should have 1st class', () => {
@@ -117,7 +117,7 @@ describe('Image', () => {
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
     />);
-    expect(wrapper.find('img').prop('class')).toEqual(expect.stringContaining(IMAGE_CLASSNAME1));
+    expect(wrapper.find('img').hasClass(IMAGE_CLASSNAME1)).toEqual(true);
   });
 
   it('should have 2nd class', () => {
@@ -128,7 +128,7 @@ describe('Image', () => {
       width={IMAGE_WIDTH}
       height={IMAGE_HEIGHT}
     />);
-    expect(wrapper.find('img').prop('class')).toEqual(expect.stringContaining(IMAGE_CLASSNAME2));
+    expect(wrapper.find('img').hasClass(IMAGE_CLASSNAME2)).toEqual(true);
   });
 
   it('should have a width attribute', () => {
