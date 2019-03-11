@@ -4,19 +4,24 @@ import { Helmet } from 'react-helmet';
 import H1 from '../components/H1';
 import Image from '../components/Image';
 
+const imageName = 'Pikachu.jpg';
+const imageClass = 'pokemon pikachu';
+const imageAlt = 'Pikachu';
+const imageWidth = '372px';
+const imageHeight = '372px';
+const title = 'Hey There';
+
+/**
+ * The App
+ */
 function App() {
-  const imageName = 'Pikachu.jpg';
-  const imageClass = 'pokemon pikachu';
-  const imageAlt = 'Pikachu';
-  const imageWidth = '372px';
-  const imageHeight = '372px';
   return (
     <div className="main">
       <Helmet>
-        <title>Hey There</title>
+        <title>{title}</title>
         <meta name="description" content="Definitely good" />
       </Helmet>
-      <H1 />
+      <H1 title={title} />
       <Image
         filename={imageName}
         className={imageClass}

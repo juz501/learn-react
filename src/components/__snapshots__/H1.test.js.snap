@@ -4,6 +4,6 @@ exports[`H1 should match snapshot 1`] = `
 <h1
   className="title"
 >
-  Hello There
+  Hey There
 </h1>
 `;
