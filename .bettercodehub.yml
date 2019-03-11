@@ -1,3 +1,6 @@
+languages:
+- javascript
+component_depth: 2
 exclude:
 - /webpack\.config\.js
 - /.*rc\.js
