@@ -30,16 +30,16 @@ function getPikachuImage() {
  * The App
  */
 function App() {
-  const initialTitle = 'Pikachu is here!';
-  const [title, setTitle] = useState(initialTitle);
+  const initialHeading = 'Pikachu is here!';
+  const [heading, setHeading] = useState(initialHeading);
 
   return (
     <div className="main">
-      {getHelmet(title)}
-      <H1>{title}</H1>
+      {getHelmet(heading)}
+      <H1>{heading}</H1>
       <div className="content">
         {getPikachuImage()}
-        <Buttons initialTitle={initialTitle} setTitle={setTitle} />
+        <Buttons initialHeading={initialHeading} setHeading={setHeading} />
       </div>
     </div>
   );
