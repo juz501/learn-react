@@ -4,7 +4,7 @@
   "scripts": {
     "build": "webpack --mode production && react-snapshot --build-dir=./dist",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
-    "lint": "eslint ./src && eslint ./testSetup && eslint ./__tests__ && stylelint ./src/stylelint/**/*.scss",
+    "lint": "eslint ./src && stylelint ./src/stylelint/**/*.scss",
     "start": "webpack-dev-server --open --hot",
     "test": "jest",
     "update-snapshot": "jest -u",
@@ -64,7 +64,7 @@
       "enzyme-to-json/serializer"
     ],
     "setupFilesAfterEnv": [
-      "./src/setupTests.js",
+      "./src/setup.tests.js",
       "./node_modules/jest-enzyme/lib/index.js",
       "jest-prop-type-error"
     ]

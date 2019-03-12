@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
 
 function H1(props) {
-  const { children: title } = props;
+  const { children: heading } = props;
+
   return (
-    <h1 className="title">{title}</h1>
+    <div className="heading-wrapper">
+      <h1 className="heading">{heading}</h1>
+    </div>
   );
 }
+
 // Specifies the default values for props:
 H1.defaultProps = {
   children: 'Hello There',

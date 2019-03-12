@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`H1 should match snapshot 1`] = `
-<h1
-  className="title"
+<div
+  className="heading-wrapper"
 >
-  Hey There
-</h1>
+  <h1
+    className="heading"
+  >
+    Hey There
+  </h1>
+</div>
 `;

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { hot } from 'react-hot-loader';
 import { Helmet } from 'react-helmet';
 import H1 from '../components/H1';
 import Image from '../components/Image';
+import Buttons from './Buttons';
 
-function getHelmet() {
-  const title = 'Hey There';
+function getHelmet(title) {
   const description = 'Awesome meta description';
   return (
     <Helmet>
@@ -30,12 +30,17 @@ function getPikachuImage() {
  * The App
  */
 function App() {
-  const title = 'Pikachu is here!';
+  const initialHeading = 'Pikachu is here!';
+  const [heading, setHeading] = useState(initialHeading);
+
   return (
     <div className="main">
-      {getHelmet()}
-      <H1 title={title} />
-      {getPikachuImage()}
+      {getHelmet(heading)}
+      <H1>{heading}</H1>
+      <div className="content">
+        {getPikachuImage()}
+        <Buttons initialHeading={initialHeading} setHeading={setHeading} />
+      </div>
     </div>
   );
 }

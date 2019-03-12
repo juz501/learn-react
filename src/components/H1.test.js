@@ -11,9 +11,9 @@ describe('H1', () => {
     expect(component.find('h1')).toHaveLength(1);
   });
 
-  it('should have class `.title`', () => {
+  it('should have class `.heading`', () => {
     const component = shallow(<H1 />);
-    expect(component.find('h1').hasClass('title')).toEqual(true);
+    expect(component.find('h1').hasClass('heading')).toEqual(true);
   });
 
   it('should have title as attribute passed through', () => {
