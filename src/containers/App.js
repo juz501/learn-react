@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader';
 import { Helmet } from 'react-helmet';
 import H1 from '../components/H1';
 import Image from '../components/Image';
-import Buttons from './Buttons';
+import Buttons from '../components/Buttons';
 
 function getHelmet(title) {
   const description = 'Awesome meta description';
