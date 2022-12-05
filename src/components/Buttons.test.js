@@ -12,11 +12,10 @@ describe('Buttons', () => {
 
   it('should work with hello', () => {
     let heading = 'test';
-    function setHeading(newHeading) {
-      heading = newHeading;
-    }
+    const mockHeadingFn = jest.fn( h => heading = h );
+    
     const expectedHeading = 'Hello';
-    const wrapper = mount(<Buttons initialHeading="test" setHeading={setHeading} />);
+    const wrapper = mount(<Buttons initialHeading="test" setHeading={mockHeadingFn} />);
     const helloButton = wrapper.find(`[value="${expectedHeading}"]`).last();
     helloButton.simulate('click', 1);
     expect(heading).toEqual(expectedHeading);
@@ -24,11 +23,9 @@ describe('Buttons', () => {
 
   it('should work with bye', () => {
     let heading = 'test';
-    function setHeading(newHeading) {
-      heading = newHeading;
-    }
+    const mockHeadingFn = jest.fn( h => heading = h );
     const expectedHeading = 'Bye';
-    const wrapper = mount(<Buttons initialHeading="test" setHeading={setHeading} />);
+    const wrapper = mount(<Buttons initialHeading="test" setHeading={mockHeadingFn} />);
     const byeButton = wrapper.find(`[value="${expectedHeading}"]`).last();
     byeButton.simulate('click', 1);
     expect(heading).toEqual(expectedHeading);
@@ -36,11 +33,9 @@ describe('Buttons', () => {
 
   it('should work with reset', () => {
     let heading = 'test';
-    function setHeading(newHeading) {
-      heading = newHeading;
-    }
+    const mockHeadingFn = jest.fn( h => heading = h );
     const expectedHeading = 'testInitial';
-    const wrapper = mount(<Buttons initialHeading="testInitial" setHeading={setHeading} />);
+    const wrapper = mount(<Buttons initialHeading="testInitial" setHeading={mockHeadingFn} />);
     const resetButton = wrapper.find('button').last();
     resetButton.simulate('click', 1);
     expect(heading).toEqual(expectedHeading);
